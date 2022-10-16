@@ -18,14 +18,10 @@ struct ContentView: View {
                     .blur(radius: 30)
                     .offset(x: 200, y: 150)
                 
-                
                 VStack{
-                    
-                    
                     Home()
                         .navigationTitle("Big O Flashcards")
                         .offset(y: -100)
-                    
                     HStack{
                         NavigationLink(destination: MultiChoiceView(), label: {
                             
@@ -68,15 +64,13 @@ struct ContentView: View {
 
 struct Home: View {
     var body: some View {
-            
-            
         VStack(spacing: 20){
             Text("Master Big(O) Notaion and Time Complexcity")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
             .multilineTextAlignment(.center)
-            Text("Usign Flashcards")
+            Text("Using Flashcards")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.white)

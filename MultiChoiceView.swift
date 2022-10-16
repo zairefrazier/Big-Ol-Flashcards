@@ -7,44 +7,41 @@
 
 import SwiftUI
 
-struct MultiChoiceView: View {
-    var emojis = ["⌨️", "💻", "📱", "🖥","📷","💾","📀","💡","📡","🖱","📼","⌚️","📺","📠","⏰","☎️","🪫","⌛️","🎙","🔌","🧯","💵","🛸","🛰"]
-    
+struct MultiChoiceView: View {    
     @State var cardCount = 4
     
     
     var body: some View {
-        VStack {
+        ZStack {
+            LinearGradient(colors: [Color("Color"),.red], startPoint: .trailing, endPoint: .top)
+                .ignoresSafeArea()
+            Circle()
+                .fill(.brown)
+                .blur(radius: 30)
+                .offset(x: 200, y: 150)
             
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                Text("What is the time complexcity for insetion of Array?")
+            VStack {
+                
+                Text("What is the time complexcity for insertion of Array?")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)
-                    
-            }
-            .opacity(0.3)
-            .foregroundColor(.white)
-            
+                    .padding()
+                
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]){
                     
                     ForEach(answers[0..<cardCount], id: \.self) { emoji in
                         CardView(content: emoji)
                     }
-                    
                 }
-            
             .foregroundColor(.red)
-            
+                    
+            }
+            .opacity(0.3)
+            .foregroundColor(.white)
         }
-        .background(LinearGradient(colors: [Color("Color"),.red], startPoint: .trailing, endPoint: .top))
-
-    
-        
     }
-    
 }
 var answers = ["O(n)", "O(logn)","O(1)","O(n^2)"]
 struct CardView: View {
