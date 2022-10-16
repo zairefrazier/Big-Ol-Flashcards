@@ -22,20 +22,14 @@ struct MultiChoiceView: View {
             
             VStack {
                 
-                Text("What is the time complexcity for insertion of Array?")
+                Text(MultiMangerVM().data.question)
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .padding()
                 
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]){
-                    
-                    ForEach(answers[0..<cardCount], id: \.self) { emoji in
-                        CardView(content: emoji)
-                    }
-                }
-            .foregroundColor(.red)
+                OptionsGridView()
                     
             }
             .opacity(0.3)
