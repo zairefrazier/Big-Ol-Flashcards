@@ -11,14 +11,37 @@ struct OptionsGridView: View {
     
     var colums: [GridItem] = Array(repeating: GridItem(.fixed(170), spacing: 20), count: 2)
     
+    
+    @State var quizRecord = MultiMangerVM.quizData[0]
+    
     var body: some View {
-        LazyVGrid(columns: colums){
+        LazyVGrid(columns: colums, spacing: 20){
             
-            ForEach(MultiMangerVM().data.optionsList) { quizOption in
+            ForEach(quizRecord.optionsList) { quizOption in
                 OptionCardView(quizOption: quizOption)
+                    .onTapGesture {
+                        verifyAnswer(slectedOption: quizOption)
+                    }
             }
         }
     .foregroundColor(.red)
+    }
+    
+    
+    func verifyAnswer(slectedOption: QuizOption) {
+        
+        if let index = quizRecord.optionsList.firstIndex(where: {$0.optionId == slectedOption.optionId}) {
+            
+            if slectedOption.optionId == MultiMangerVM.quizData[0].answer {
+                quizRecord.optionsList[index].isMatched = true
+                quizRecord.optionsList[index].isSelected = true
+                
+            }
+            else {
+                quizRecord.optionsList[index].isMatched = false
+                quizRecord.optionsList[index].isSelected = true
+            }
+        }
     }
 }
 
@@ -36,9 +59,9 @@ struct OptionCardView: View {
                 .strokeBorder(lineWidth: 3)
                 .frame(width:170,height: 170)
             VStack {
-                if (quizOption.isMatched) && (quizOption.isMatched) {
+                if (quizOption.isMatched) && (quizOption.isSelected) {
                     OptionsStatusImageView(imageName: "checkmark")
-                } else if (!(quizOption.isMatched) && (quizOption.isMatched)) {
+                } else if (!(quizOption.isMatched) && (quizOption.isSelected)) {
                     OptionsStatusImageView(imageName: "xmark")
                 } else {
                     OptionView(quizOption: quizOption)
