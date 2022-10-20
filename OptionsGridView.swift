@@ -12,15 +12,15 @@ struct OptionsGridView: View {
     var colums: [GridItem] = Array(repeating: GridItem(.fixed(170), spacing: 20), count: 2)
     
     
-    @State var quizRecord = MultiMangerVM.quizData[0]
+    var multiMangerVM: MultiMangerVM
     
     var body: some View {
         LazyVGrid(columns: colums, spacing: 20){
             
-            ForEach(quizRecord.optionsList) { quizOption in
+            ForEach(multiMangerVM.model.quizModel.optionsList) { quizOption in
                 OptionCardView(quizOption: quizOption)
                     .onTapGesture {
-                        verifyAnswer(slectedOption: quizOption)
+                        multiMangerVM.verifyAnswer(slectedOption: quizOption)
                     }
             }
         }
@@ -28,21 +28,7 @@ struct OptionsGridView: View {
     }
     
     
-    func verifyAnswer(slectedOption: QuizOption) {
-        
-        if let index = quizRecord.optionsList.firstIndex(where: {$0.optionId == slectedOption.optionId}) {
-            
-            if slectedOption.optionId == MultiMangerVM.quizData[0].answer {
-                quizRecord.optionsList[index].isMatched = true
-                quizRecord.optionsList[index].isSelected = true
-                
-            }
-            else {
-                quizRecord.optionsList[index].isMatched = false
-                quizRecord.optionsList[index].isSelected = true
-            }
-        }
-    }
+    
 }
 
 
@@ -109,6 +95,6 @@ struct OptionsStatusImageView : View {
 
 struct OptionsGridView_Previews: PreviewProvider {
     static var previews: some View {
-        OptionsGridView()
+        OptionsGridView(multiMangerVM: MultiMangerVM())
     }
 }

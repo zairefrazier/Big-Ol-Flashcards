@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var multiManagerVM: MultiMangerVM
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -23,7 +26,7 @@ struct ContentView: View {
                         .navigationTitle("Big O Flashcards")
                         .offset(y: -100)
                     HStack{
-                        NavigationLink(destination: MultiChoiceView(), label: {
+                        NavigationLink(destination: MultiChoiceView(multiManagerVM: multiManagerVM), label: {
                             
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
@@ -83,7 +86,7 @@ struct Home: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            ContentView(multiManagerVM: MultiMangerVM())
                 .previewInterfaceOrientation(.portrait)
                 
                 

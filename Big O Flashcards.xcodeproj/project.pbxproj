@@ -18,6 +18,7 @@
 		3F95566528E634750079E55E /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95566428E634750079E55E /* CardsView.swift */; };
 		3F95566728E636D40079E55E /* CardViewBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95566628E636D40079E55E /* CardViewBack.swift */; };
 		3F95566928E639550079E55E /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95566828E639550079E55E /* QuizView.swift */; };
+		3F9E08B62901187B0099AA65 /* GameCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E08B52901187B0099AA65 /* GameCompletedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3F95566428E634750079E55E /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		3F95566628E636D40079E55E /* CardViewBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewBack.swift; sourceTree = "<group>"; };
 		3F95566828E639550079E55E /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = SOURCE_ROOT; };
+		3F9E08B52901187B0099AA65 /* GameCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCompletedView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		3F95562F28E4121E0079E55E /* Big O Flashcards */ = {
 			isa = PBXGroup;
 			children = (
+				3F9E08B52901187B0099AA65 /* GameCompletedView.swift */,
 				3F60966028FBEF85003DFF59 /* OptionsGridView.swift */,
 				3F60965E28FBEB70003DFF59 /* MultiManagerVM.swift */,
 				3F60965C28FBE17D003DFF59 /* MultiModel.swift */,
@@ -160,6 +163,7 @@
 			files = (
 				3F60966128FBEF85003DFF59 /* OptionsGridView.swift in Sources */,
 				3F95563328E4121E0079E55E /* ContentView.swift in Sources */,
+				3F9E08B62901187B0099AA65 /* GameCompletedView.swift in Sources */,
 				3F60965D28FBE17E003DFF59 /* MultiModel.swift in Sources */,
 				3F95566728E636D40079E55E /* CardViewBack.swift in Sources */,
 				3F95566328E61C570079E55E /* MultiChoiceView.swift in Sources */,

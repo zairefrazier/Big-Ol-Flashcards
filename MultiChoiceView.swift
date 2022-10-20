@@ -10,6 +10,7 @@ import SwiftUI
 struct MultiChoiceView: View {    
     @State var cardCount = 4
     
+    @ObservedObject var multiManagerVM: MultiMangerVM
     
     var body: some View {
         ZStack {
@@ -19,28 +20,31 @@ struct MultiChoiceView: View {
                 .fill(.brown)
                 .blur(radius: 30)
                 .offset(x: 200, y: 150)
-            
+            if (multiManagerVM.model.quizCompleted){
+                GameCompletedView(multiManagerVm: multiManagerVM)
+            } else {
             VStack {
                 
-                Text(MultiMangerVM().data.question)
+                Text(multiManagerVM.model.quizModel.question)
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .padding()
                 
-                OptionsGridView()
-                    
+                OptionsGridView(multiMangerVM: multiManagerVM)
             }
             .opacity(0.8)
             .foregroundColor(.white)
+            }
+            
         }
     }
 }
 
 struct MultiChoiceView_Previews: PreviewProvider {
     static var previews: some View {
-        MultiChoiceView()
+        MultiChoiceView(multiManagerVM: MultiMangerVM() )
             .previewInterfaceOrientation(.portrait)
     }
 }

@@ -9,11 +9,52 @@ import Foundation
 import SwiftUI
 
 
-class MultiMangerVM {
-    var data = quizData[0]
+class MultiMangerVM: ObservableObject {
     
+    static var currentIndex = 0
+    
+    static func createGameModel(i: Int) -> Quiz {
+        return Quiz(currentQuesstionIndex: i, quizModel: quizData[i], quizCompleted: false)
+    }
+    
+    @Published var model = MultiMangerVM.createGameModel(i: MultiMangerVM.currentIndex)
+    
+    func verifyAnswer(slectedOption: QuizOption) {
+        
+        for index in model.quizModel.optionsList.indices {
+            model.quizModel.optionsList[index].isMatched = false
+            model.quizModel.optionsList[index].isSelected = false
+            
+        }
+        if let index = model.quizModel.optionsList.firstIndex(where: {$0.optionId == slectedOption.optionId}) {
+            
+            if slectedOption.optionId == model.quizModel.answer {
+                model.quizModel.optionsList[index].isMatched = true
+                model.quizModel.optionsList[index].isSelected = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    if (MultiMangerVM.currentIndex < 2) {
+                        MultiMangerVM.currentIndex += 1
+                        self.model = MultiMangerVM.createGameModel(i: MultiMangerVM.currentIndex)
+                    } else {
+                        self.model.quizCompleted = true
+                        self.model.quizWinningStatua = false
+                    }
+                }
+                
+            }
+            else {
+                model.quizModel.optionsList[index].isMatched = false
+                model.quizModel.optionsList[index].isSelected = true
+            }
+        }
+    }
+    
+    func restartGame() {
+        MultiMangerVM.currentIndex = 0
+        model = MultiMangerVM.createGameModel(i: MultiMangerVM.currentIndex)
+    }
 }
-
 
 extension MultiMangerVM {
     static var quizData: [QuizModel] {

@@ -13,7 +13,7 @@ struct Big_O_FlashcardsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(multiManagerVM: MultiMangerVM())
         }
     }
 }
