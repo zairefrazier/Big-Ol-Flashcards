@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MultiChoiceView: View {    
     @State var cardCount = 4
-    
     @ObservedObject var multiManagerVM: MultiMangerVM
     
     var body: some View {

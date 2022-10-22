@@ -11,7 +11,6 @@ struct OptionsGridView: View {
     
     var colums: [GridItem] = Array(repeating: GridItem(.fixed(170), spacing: 20), count: 2)
     
-    
     var multiMangerVM: MultiMangerVM
     
     var body: some View {
@@ -21,14 +20,11 @@ struct OptionsGridView: View {
                 OptionCardView(quizOption: quizOption)
                     .onTapGesture {
                         multiMangerVM.verifyAnswer(slectedOption: quizOption)
-                    }
+                }
             }
         }
     .foregroundColor(.red)
     }
-    
-    
-    
 }
 
 

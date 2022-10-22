@@ -33,7 +33,6 @@ struct GameCompletedView: View {
                     .font(.system(size: 30))
                     .foregroundColor(.white)
                 
-                
             }
             .frame(width: 300, height: 60, alignment: .center)
             .background(.blue.opacity(0.6))
