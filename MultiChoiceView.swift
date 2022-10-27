@@ -22,8 +22,8 @@ struct MultiChoiceView: View {
             if (multiManagerVM.model.quizCompleted){
                 GameCompletedView(multiManagerVm: multiManagerVM)
             } else {
-            VStack {
                 
+            VStack {
                 Text(multiManagerVM.model.quizModel.question)
                     .font(.title)
                     .fontWeight(.bold)
@@ -36,7 +36,6 @@ struct MultiChoiceView: View {
             .opacity(0.8)
             .foregroundColor(.white)
             }
-            
         }
     }
 }
