@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct Big_O_FlashcardsApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
     
     
     var body: some Scene {
