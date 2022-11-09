@@ -14,10 +14,6 @@ struct QuizView: View {
     @State var isFlipped = false
     let dureationAndDelay: CGFloat = 0.1
     
-    
-    
-    
-    
     var body: some View {
         VStack {
             ZStack{
