@@ -44,10 +44,7 @@ struct QuizView: View {
                 backDegree = 0
             }
         }
-        
-        
     }
-    
 }
 
 struct QuizView_Previews: PreviewProvider {

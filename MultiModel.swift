@@ -7,8 +7,7 @@
 
 import Foundation
 import SwiftUI
-
-
+import Firebase
 
 struct Quiz {
     var currentQuesstionIndex: Int

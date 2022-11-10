@@ -38,7 +38,6 @@ struct ContentView: View {
                                     .bold()
                                 .foregroundColor(.white)
                             }
-                            
                         })
                         Spacer()
                         NavigationLink(destination: QuizView() , label: {
@@ -60,9 +59,7 @@ struct ContentView: View {
             }
         }
         .preferredColorScheme(.dark)
-        
     }
-    
 }
 
 struct Home: View {
@@ -79,8 +76,7 @@ struct Home: View {
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
         }
-        .padding(.horizontal)
-            
+        .padding(.horizontal)     
     }
 }
 struct ContentView_Previews: PreviewProvider {
