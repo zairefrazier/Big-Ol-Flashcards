@@ -85,7 +85,9 @@ struct ContentView_Previews: PreviewProvider {
             ContentView(multiManagerVM: MultiMangerVM())
                 .previewInterfaceOrientation(.portrait)
                 
-                
+          
+            
+            
         }
     }
 }

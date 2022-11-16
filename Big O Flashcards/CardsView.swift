@@ -29,7 +29,6 @@ struct CardsView: View {
                 Text(textContent)
                     .font(.title)
                     .fontWeight(.bold)
-                
             }
         }
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
