@@ -73,6 +73,16 @@ extension MultiMangerVM {
                       optionsList: [QuizOption(id: 21, optionId: "A", option: "O(1)"),
                                     QuizOption(id: 22, optionId: "B", option: "O(n)"),
                                     QuizOption(id: 23, optionId: "C", option: "O(n^2)"),
+                                    QuizOption(id: 24, optionId: "D", option: "O(logn)")]),
+            QuizModel(question: "What is the time complexcity for Access of an HashMap?", answer: "D",
+                      optionsList: [QuizOption(id: 21, optionId: "A", option: "O(1)"),
+                                    QuizOption(id: 22, optionId: "B", option: "O(n)"),
+                                    QuizOption(id: 23, optionId: "C", option: "O(n^2)"),
+                                    QuizOption(id: 24, optionId: "D", option: "O(logn)")]),
+            QuizModel(question: "What is the time complexcity for Access of an HashMap?", answer: "D",
+                      optionsList: [QuizOption(id: 21, optionId: "A", option: "O(1)"),
+                                    QuizOption(id: 22, optionId: "B", option: "O(n)"),
+                                    QuizOption(id: 23, optionId: "C", option: "O(n^2)"),
                                     QuizOption(id: 24, optionId: "D", option: "O(logn)")])
         ]
     }
