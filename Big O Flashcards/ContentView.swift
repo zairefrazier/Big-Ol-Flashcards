@@ -14,10 +14,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(colors: [Color("Color"),.red], startPoint: .trailing, endPoint: .top)
+                LinearGradient(colors: [Color("Color"),.blue], startPoint: .trailing, endPoint: .top)
                     .ignoresSafeArea()
                 Circle()
-                    .fill(.brown)
+                    .fill(.blue)
                     .blur(radius: 30)
                     .offset(x: 200, y: 150)
                 
